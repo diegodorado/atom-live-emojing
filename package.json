@@ -1,0 +1,27 @@
+{
+  "name": "live-emojing",
+  "main": "./lib/live-emojing",
+  "version": "0.0.0",
+  "description": "A short description of your package",
+  "keywords": [],
+  "activationCommands": {
+    "atom-workspace": "live-emojing:bind",
+    "atom-workspace": "live-emojing:load"
+  },
+  "repository": "https://github.com/atom/live-emojing",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "chokidar": "^2.0.4",
+    "es6-tween": "^5.3.1",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "node-osc": "^2.1.0",
+    "request": "^2.87.0",
+    "simplex-noise": "^2.4.0",
+    "three-full": "^11.3.2",
+    "websocket": "^1.0.26"
+  }
+}

@@ -1,0 +1,52 @@
+// Note: This file is specially named!
+// Less files with the name `*.atom-text-editor.less` will be loaded into the text-editor!
+
+.highlight-rainbow .region {
+  animation: rainbow 4s steps(36) infinite,almostFade 0.44s infinite alternate;
+  background: #EE7752;
+}
+
+.highlight-colorswipe .region {
+  animation: rainbow 4s infinite alternate steps(36),almostFade 0.44s infinite alternate;
+}
+
+.syntax--tidalcycles .syntax--comment {
+  animation: textglitch 3s infinite alternate;
+  text-shadow: 2px 2px 5px black;
+}
+
+@keyframes textglitch {
+  0% {
+    text-transform: uppercase;
+  }
+
+  10% {
+    text-transform: capitalize;
+  }
+
+  20% {
+    font-style: bold;
+  }
+
+  30% {
+    font-style: italic;
+    text-transform: lowercase;
+  }
+}
+
+
+@keyframes rainbow {
+  from {
+    filter:hue-rotate(0deg);
+  }
+
+  to {
+    filter:hue-rotate(360deg);
+  }
+}
+
+@keyframes almostFade {
+  from {
+    opacity: 0.45;
+  }
+}

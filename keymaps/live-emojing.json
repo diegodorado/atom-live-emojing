@@ -1,0 +1,6 @@
+{
+  "atom-workspace": {
+    "ctrl-alt-o": "live-emojing:bind",
+    "ctrl-alt-p": "live-emojing:load"
+  }
+}

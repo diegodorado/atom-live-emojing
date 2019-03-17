@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Bind live-emojing to selection",
+        "command": "live-emojing:bind"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "live-emojing",
+          "submenu": [
+            {
+              "label": "Bind live-emojing to selection",
+              "command": "live-emojing:bind"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

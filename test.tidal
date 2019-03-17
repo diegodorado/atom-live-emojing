@@ -1,0 +1,372 @@
+--lets start with something very simple
+d1 $ s "💜"
+
+
+--add another emoji
+d1 $ s "💜🙏"
+
+
+--play with the pattern
+d1 $ s "[💜🙏*2]*2"
+
+--some euclidean riythms
+d1 $ s "[💜🙏]([3 6]/2,8)"
+
+-- apply a pattern transformation
+d1 $ off 0.25 (# speed 8) $ s "[💜🙏]([3 6]/2,8)"
+
+
+--safely moves structure
+d1 $ off 0.25 (# speed 8) $ n "0([3 6]/2,8)" # s "{🦍🦄🎇👷🚵🤾🛅🎎}%5"
+
+
+d1 $ stack[
+  off 0.25 (# speed 8) $ n "0([3 6]/2,8)" # s "{🦍🦄🎇👷🚵🤾🛅🎎}%5",
+  s "💗✊"]
+
+
+d1 $ stack[
+  off 0.25 (# speed 8) $ n "0([3 6]/2,8)" # s "{🦍🦄🎇👷🚵🤾🛅🎎}%5",
+  s "{🛵🚞🚞🚞🐼🐷}%8",        --  Diego
+  s "💗✊" # orbit 3 ]
+
+
+-- start a bass line, you go on with rythm
+d1 $ stack[
+  off 0.25 (# speed 8) $ n "0([3 6]/2,8)" # s "{🦍🦄🎇👷🚵🤾🛅🎎}%5",
+  s "{🛵🚞🚞🚞🐼🐷}%8",        --  Diego
+  note "[-12 0 ~!6]/4" # s " midi",
+  s "💗✊" # orbit 3,
+  s "~" ]
+
+
+-- start a bass line, you go on with rythm
+d1 $ stack[
+  off 0.25 (# speed 8) $ n "0([3 6]/2,8)" # s "{🦍🦄🎇👷🚵🤾🛅🎎}%5",   --  waiting player
+  s "{😫😫😫😫😫}%8",--  Diego
+  note (scale "lydian" $ "[-7 0 ~!2]"+"[-2 -2 -1 0]/16") # s " midi",
+  s "💗✊" # orbit 3,
+  s "~" ]
+
+
+
+
+
+-- start a bass line, you go on with rythm
+do
+  let p = "[-2 -2 -1 0]/16"
+      d = scale "lydian"
+  d1 $ stack[
+    off 0.25 (# speed 8) $ n "0([3 6]/2,8)" # s "{🦍🦄🎇👷🚵🤾🛅🎎}%5",   --  waiting player
+    s "{😫😫😫😫😫}%8",--  Diego
+    note (d $ "[-7 0 ~!2]"+p) # s " midi",
+    note (d $ "[0,2,4]"+p) # s " midi" # midichan 2,
+    s "💗✊" # orbit 3,
+    s "~" ]
+
+
+
+do
+  let p = "[-2 -2 -1 0]/16"
+      d = scale "lydian"
+  d1 $ stack[
+    off 0.25 (# speed 8) $ n "0([3 6]/2,8)" # s "{🦍🦄🎇👷🚵🤾🛅🎎}%5",   --  waiting player
+    s "{😵}%4",--  Diego
+    note (d $ "[-7 0 ~!2]"+p) # s " midi",
+    note (d $ "[0,2,4]"+p) # s " midi" # midichan 2,
+    s "💗<✊[👊*2 ~]>" # orbit 3,
+    s "~" ]
+
+
+
+
+
+do
+  let p = "[-2 -2 -1 0]/16"
+      d = scale "lydian"
+  d1 $ stack[
+    n "0(5,8,<0 10 1>)" # s "{🦍🦄🎇👷🚵🤾🛅🎎}%1",   --  waiting player
+    s "{😵}%4",--  Diego
+    note (d $ "[-7 0 ~!2]"+p) # s " midi",
+    note (d $ off 0.25 (+7) $ "[0,2,4]"+p) # s " midi" # midichan "[2,3]" # sus 0.1,
+    s "💗<✊[👊*2 ~]>" # orbit 3,
+    s "~" ]
+
+
+do
+  let p = "[-2 -2 -1 0]/16"
+      d = scale "lydian"
+  d1 $ stack[
+    n "0(5,8,<0 10 1>)" # s "{🦍🦄🎇👷🚵🤾🛅🎎}%1",   --  waiting player
+    s "{😵}%4",--  Diego
+    note (d $ "[0 2 4 6 8]"+p) # s " midi" # midichan 5,
+    note (d $ "[-7 0 ~!2]"+p) # s " midi",
+    note (d $ off 0.25 (+7) $ "[0,2,4]"+p) # s " midi" # midichan "[2,3]" # sus 0.1,
+    s "💗<✊[👊*2 ~]>" # orbit 3,
+    s "~" ]
+
+
+do
+  let p = "[-2 -2 -1 0]/16"
+      d = scale "lydian"
+  d1 $ stack[
+    n "0(5,8,<0 10 1>)" # s "{🦍🦄🎇👷🚵🤾🛅🎎}%1",   --  waiting player
+    s "{😵}%4",--  Diego
+    note (d $ (irand 8)+"0*8"|+"[0 2 4 6 8]"+p) # s "<midi ~>" # midichan 5,
+    note (d $ "[-7 0 ~!2]"+p) # s " midi",
+    note (d $ off 0.25 (+7) $ "[0,2,4]"+p) # s " midi" # midichan "[2,3]" # sus 0.1,
+    s "💗<✊[👊*2 ~]>" # orbit 3,
+    s "~" ]
+
+
+
+do
+  let p = "[-2 -2 -1 0]/16"
+      d = scale "lydian"
+  d1 $ stack[
+    n "0(5,8,<0 10 1>)" # s "{🦍🦄🎇👷🚵🤾🛅🎎}%1",   --  waiting player
+    s "{😵}%4",--  Diego
+    note (d $ (sometimes (slow "<2 4>") $ (irand 5)+"0*8")|+"[0 2 4 6 8]/4"+p) # s "<midi ~>" # midichan 5,
+    note (d $ "[-7 0 ~!2]"+p) # s " midi",
+    note (d $ off 0.25 (+7) $ "[0,2,4]"+p) # s " midi" # midichan "[2,3]" # sus 0.1 # gain 0.85,
+    s "💗<✊[👊*2 ~]>" # orbit 3,
+    s "~" ]
+
+
+
+do
+  let p = "[-2 -2 -1 0]/16"
+      d = scale "lydian"
+  d1 $ stack[
+    n "0(5,8,<0 10 2 1>)" # s "{🦍🎎}%1",
+    note (d $ (sometimes (slow "<2 4>") $ (irand 5)+"0*8")|+"[0 2 4 6 8]/4"+p) # s "<midi ~>" # midichan 5,
+    note (d $ "[-7 0 ~!2]"+p) # s " midi",
+    note (d $ off 0.25 (+7) $ "[0,2,4]"+p) # s " midi" # midichan "[2,3]" # sus 0.1 # gain 0.85,
+    s "[💗<✊[👊*2 ~]>]/2" # orbit 3,
+    s "~" ]
+
+
+
+
+do
+  let p = "[-2 -2 -1 0]/16"
+      d = scale "lydian"
+  d1 $ stack[
+    n "0(5,8,<0 10 2 1>)" # s "{🦍🎎}%1",
+    note (d $ (sometimes (slow "<2 4>") $ (irand 5)+"0*8")|+"[0 2 4 6 8]/4"+p) # s "<midi ~>" # midichan 5,
+    note (d $ "[-7 0 ~!2]"+p) # s " midi",
+    note (d $ off 0.25 (+7) $ "[0,2,4](3,8,2)"+p) # s " midi" # midichan "[2,3]" # sus 0.08 # gain 0.85,
+    s "[💗<✊[👊*2 ~]>]/2" # orbit 3,
+    s "~" ]
+
+do
+  let p = "[-2 -2 -1 0]/16"
+      d = scale "lydian"
+  d1 $ stack[
+    n "0(5,8,<0 10 2 1>)" # s "{🦍🎎}%1",
+    note (d $ (sometimes (slow "<2 4>") $ (irand 5)+"0*8")|+"[0 2 4 6 8]/4"+p) # s "<midi ~>" # midichan 5,
+    note (d $ "[-7 0 ~!2]"+p) # s " midi",
+    note (d $ "[0,2,4](3,8,<0 2>)"+"[0,7]"+p) # s " midi" # midichan "[2,3]" # sus 0.1 # gain 0.85,
+    s "[💗<✊[👊*2 ~]>]/2" # orbit 3,
+    s "~" ]
+
+do
+  let p = "[-2 -2 -1 [0 7]]/16"
+      d = scale "lydian"
+  d1 $ stack[
+    n "0(5,8,<0 10 2 1>)" # s "{🦍🎎}%1",
+    note (d $ every 3 (off 0.25 (+"[0 2 4]")) $ (sometimes (slow "<2 4>") $ (irand 5)+"0*8")|+"[0 2 4 6 8]/4"+p) # s "<midi ~>" # midichan 5,
+    note (d $ "[-7 0 ~!2]"+p) # s " midi",
+    note (d $ "[0,2,4](3,8,<0 1 2 0>)"+"[0,7]"+p) # s " midi" # midichan "[2,3]" # sus 0.08 # gain 0.85,
+    s "[💗<✊[👊*2 ~]>]" # orbit 3,
+    s "~" ]
+
+
+do
+  let p = "[-2 -2 -1 -1]/16"
+      d = scale "ritusen"
+  d1 $ stack[
+    n "0(5,8,<0 10 2 1>)" # s "{🦍🎎}%1",
+    note (d $ (irand 8)+"0*8"|+"[0 2 4 6 8]/4"+p) # s "midi" # midichan 5,
+    note (d $ "[-7 0 ~!2]"+p) # s " midi",
+    --note (d $ "[0,2,4](3,8,<0 1 2 0>)"+"[0,7]"+p) # s " midi" # midichan "[2,3]" # sus 0.08 # gain 0.85,
+    s "[💗<✊[👊*2 ~]>]" # orbit 3,
+    s "~" ]
+
+
+
+
+do
+  let p = "[0 -2]/16"
+      d = scale "minPent"
+  d1 $ stack[
+    n "0(5,8,<0 10 2 1>)" # s "{🦍🎎}%1",
+    note (d $ (irand 8)+"0*8"|+"[0 2 4 6 8]/4"+p) # s "midi" # midichan 5,
+    note (d $ "{0 5 0 [4 5]}"-5+p) # s " midi",
+    --note (d $ "[0,2,4](3,8,<0 1 2 0>)"+"[0,7]"+p) # s " midi" # midichan "[2,3]" # sus 0.08 # gain 0.85,
+    s "[💗<✊[👊*2 ~]>]" # orbit 3,
+    s "~" ]
+
+
+
+do
+  let p = "[0 -2]/16"
+      d = scale "minPent"
+  d1 $ stack[
+    n "0(5,8,<0 10 2 1>)" # s "{🦍🎎}%1" # orbit 2 # delay 0.5 # delayt 0.25 # delayfb 0.7,
+    note (d $ (irand 8)+"0*8"|+"[0 2 4 6 8]/4"+p) # s "midi" # midichan 5,
+    note (d $ "{0 5 0 [4 5]}"-5+p) # s " midi",
+    --note (d $ "[0,2,4](3,8,<0 1 2 0>)"+"[0,7]"+p) # s " midi" # midichan "[2,3]" # sus 0.08 # gain 0.85,
+    s "[💗<✊[👊*2 ~]>]" # orbit 3,
+    s "~" ]
+
+do
+  let p = "[0 -2]/16"
+      d = scale "minPent"
+  d1 $ stack[
+    n "0(5,8,<0 10 2 1>)" # s "{🦍🎎}%1" # orbit 2 # delay 0.5 # delayt 0.25 # delayfb 0.7,
+    note (d $ (irand 4)+"0*1"|+"[0 2 4 6 8]/4"+p) # s "midi" # midichan 5,
+    note (d $ "{0 5 0 [4 5]}"-5+p) # s " midi",
+    control (range 50 90 $ slow 4 $ sine) # s " midi" # ctlNum 71 # midicmd "control",
+    control (range 50 90 $ slow 4.8 $ sine) # s " midi" # ctlNum 74 # midicmd "control",
+    --note (d $ "[0,2,4](3,8,<0 1 2 0>)"+"[0,7]"+p) # s " midi" # midichan "[2,3]" # sus 0.08 # gain 0.85,
+    s "[💗<✊[👊*2 ~]>]" # orbit 3,
+    s "~" ]
+
+
+
+do
+  let p = "[0 -2]/16"
+      d = scale "minPent"
+  d1 $ stack[
+    n "0(5,8,<0 10 2 1>)" # s "{🦍🎎}%1" # orbit 2 # delay 0.5 # delayt 0.25 # delayfb 0.7,
+    note (d $ (irand 4)+"0*2"|+"[0 -2 -2 10]/4"+p) # s "midi" # midichan 5 # sus 0.2,
+    note (d $ "{0 5 0 [4 5]}"-5+p) # s " midi",
+    control (range 50 90 $ slow 4 $ sine) # s " midi" # ctlNum 71 # midicmd "control",
+    control (range 50 80 $ slow 4.8 $ sine) # s " midi" # ctlNum 74 # midicmd "control",
+    --note (d $ "[0,2,4](3,8,<0 1 2 0>)"+"[0,7]"+p) # s " midi" # midichan "[2,3]" # sus 0.08 # gain 0.85,
+    s "[💗<✊[👊*2 ~]>]" # orbit 3,
+    s "~" ]
+
+
+
+do
+  let p = "[0 -2]/16"
+      d = scale "aeolian"
+  d1 $ stack[
+    n "0(5,8,<0 10 2 1>)" # s "{🦍🎎}%1" # orbit 2 # delay 0.5 # delayt 0.25 # delayfb 0.7,
+    note (d $ (irand 4)+"0*4"|+"[0 -2 -2 10]/4"+p) # s "midi" # midichan 5 # sus 0.2,
+    note (d $ "{0 7 0 [6 7] 0 ~ [10 14] [7 0]}/2"-5+p) # s " midi",
+    control (range 50 90 $ slow 4 $ sine) # s " midi" # ctlNum 71 # midicmd "control",
+    control (range 50 80 $ slow 4.8 $ sine) # s " midi" # ctlNum 74 # midicmd "control",
+    note (d $ "[0,2,4](3,8,<0 1 2 0>)"+"[0,7]"+p) # s " midi" # midichan "[2,3]" # sus 0.08 # gain 0.85,
+    s "[💗<✊[👊*2 ~]>]" # orbit 3,
+    s "~" ]
+
+
+
+do
+  let p = "[0 ]/16"
+      d = scale "aeolian"
+  d1 $ stack[
+    n "0(5,8,<0 10 2 1>)" # s "{🦍🎎}%1" # orbit 2 # delay 0.5 # delayt 0.25 # delayfb 0.7,
+    -- note (d $ (irand 8)+"[0*4,0*8]"|+"[0 -2 -2 10]/4"+p) # s "midi" # midichan 5 # sus 0.2 # gain 0.95,
+    note (d $ "{0 7 0 ~ 7 0 }%8"-5+p) # s " midi" # sus (slow 3 $ sine*0.2+0.1),
+    control (range 50 90 $ slow 4 $ sine) # s " midi" # ctlNum 71 # midicmd "control",
+    control (range 50 80 $ slow 4.8 $ sine) # s " midi" # ctlNum 74 # midicmd "control",
+    -- note (d $ "[0,2,4](3,8,<0 1 2 0>)"+"[0,7]"+p) # s " midi" # midichan "[2,3]" # sus 0.08 # gain 0.85,
+    s "[💗<✊[👊*2 ~]>]" # orbit 3,
+    s "~" ]
+
+
+do
+  let p = "[-3 -2 -1 [0 7] ]/16"
+      d = scale "aeolian"
+  d1 $ stack[
+    n "0(5,8,<0 10 2 1>)" # s "{🦍🎎}%1" # orbit 2 # delay 0.5 # delayt 0.25 # delayfb 0.7,
+    note (d $ (irand 8)+"[0*4,0*8]"|+"[0 -2 -2 10]/4"+p) # s "midi" # midichan 5 # sus 0.2 # gain 0.95,
+    note (d $ "{0 7 0 ~ 7 0 }%8"-5+p) # s " midi" # sus (slow 3 $ sine*0.2+0.1),
+    control (range 50 90 $ slow 4 $ sine) # s " midi" # ctlNum 71 # midicmd "control",
+    control (range 50 80 $ slow 4.8 $ sine) # s " midi" # ctlNum 74 # midicmd "control",
+    note (d $ "[0,2,4](3,8,<0 1 2 0>)"+"[0,7]"+p) # s " midi" # midichan "[2,3]" # sus 0.08 # gain 0.85,
+    (whenmod 16 14 (const $ s "✊*12" # speed (slow 2 $ isaw*2+1)) $ s "[💗<✊[👊*2 ~]>]") # orbit 3,
+    s "~" ]
+
+do
+  let p = "[-3 -2 -1 [[2 3] 0] ]/16"
+      d = scale "aeolian"
+  d1 $ stack[
+    n "0(5,8,<0 10 2 1>)" # s "{🦍🎎}%1" # orbit 2 # delay 0.5 # delayt 0.25 # delayfb 0.7,
+    note (d $ (irand 8)+"[0*4,0*8,0*16]"|+"[0 -2 -2 10]/4"+p) # s "midi" # midichan 5 # sus 0.2 # gain 0.9,
+    note (d $ "{0 7 ~ ~ }%8"-5+p) # s " midi" # sus (slow 3 $ sine*0.1+0.1),
+    control (range 50 90 $ slow 4 $ sine) # s " midi" # ctlNum 71 # midicmd "control",
+    control (range 50 80 $ slow 4.8 $ sine) # s " midi" # ctlNum 74 # midicmd "control",
+    note (d $ "[0,2,4](3,8,<0 1 2 0>)"+"[0,7]"+p) # s " midi" # midichan "[2,3]" # sus 0.08 # gain 0.85,
+    (whenmod 16 16 (const $ s "✊*12" # speed (slow 2 $ isaw*2+1)) $ s "[💗<✊[👊*2 ~]>]") # orbit 3,
+    s "~" ]
+
+do
+  let p = "[-3 -2 -1 0]/16"
+      d = scale "aeolian"
+  d1 $ stack[
+    s "{🦍🎎}%4" # orbit 2 # delay 0.5 # delayt 0.125 # delayfb 0.7,
+    note (d $ (round <$> slow 2 sine*7+rand*7)+|"0*4 0*4?"|+"[0 0 0 7]/4"+p) # s "midi" # midichan 5,
+    note (d $ "{0 <7 [7 0]> ~ ~ }%4"-5+p) # s " midi" ,
+    control (range 50 90 $ slow 4 $ sine) # s " midi" # ctlNum 71 # midicmd "control",
+    control (range 50 80 $ slow 4.8 $ sine) # s " midi" # ctlNum 74 # midicmd "control",
+    -- note (d $ "[0,2,4,<6 7>,<8 10 9>](<3 5>,8,<0 1 2 0>)"+"[7]"+p) # s " midi" # midichan "[2,3]" # gain 0.85,
+    (whenmod 16 16 (const $ s "✊*12" # speed (slow 2 $ isaw*2+1)) $ s "[💗<✊[👊*2 ~]>]") # orbit 3 # room 0.3,
+    s "~" ]
+
+
+do
+  let bp = "[-2 -2 -1 [0 7]]/16"
+  --let bp = "[-2 [1 [2 5]]]/8"
+  --let bp = "[0 1 2 [3 4] ]/16"
+  let dilei a b c= delay a #delayt b # delayfb c
+      d = scale "lydian"
+      -- d = scale "dorian"
+      ---d = scale "ritusen"
+  d1 $ stack [
+    s "[💜<✊[👊*2 ~]>]" # orbit 3 # room 0.2 ,
+    -- note (d $ "0*8"+"[0 2 4 6]"+(irand 8+bp*1)) # s "<midi ~>" # midichan 5 # gain 1,
+    -- note (d $ "[0,4,6,8](3,8,<0 1 2 0>)"+"[0,7]"+bp) # s " midi" # midichan "[3]" #gain 0.9 ,
+    -- note (d $ stut' 3 0.25 (+"[0 .. 3]") $ "7"+bp) # m 4 # gain 1 # sus 0.17,
+    -- note (d $ "{0 7 ~ ~}%4"-7+bp) # s " midi" # midichan "[0]" # gain 1.2 ,
+    -- note (d $ "{0 <6 7> <0 <10 14 0 4>> <0 7>}%8"-7+bp) #  s " midi"  # gain 1.2 ,
+    slow 4 $ shuffle 8 $ striate 32 $ s "drums" # shape 0.3 # gain 1.1,
+    -- control (range 90 60 $ slow 8 sine) # ctlNum 71 # s "midi" # midicmd "control" # midichan "[0,1]",
+    control (range 50 90 $ slow 2.3 sine) # ctlNum 74 # s "midi" # midicmd "control" # midichan "[0,1]",
+     -- note (d $ (fast 2 $"{0 <6 7 6 [0 7]>}%4"+7)+bp) # m "[1]" # gain 1.2 # sus 0.1208,
+    -- note (d $ "{0 <6 7 6 [0 7]>}%8"-7+bp) # m "[0]" # gain 1.3 # sus 0.08,
+    --note (d $ "[{0 5 0 ~ 0 5 <10 ~>}%8]"-7+bp) # m "[0]" # gain 1.03 # sus (slow 2 sine*0.2+0.05),
+    --note (d $ "[0,2,4](<3 3>,8,<0 1 2 0>)"+"[0,7]"+bp) # m "[2,3]" #gain 0.9 # sus 0.17,
+    -- control (range 60 60 $ slow 8 sine) # ctlNum 71 # s "midi" # midicmd "control",
+    -- control (range 60 60 $ slow 2.3 sine) # ctlNum 74 # s "midi" # midicmd "control",
+    s "~"]
+
+
+
+
+
+
+
+
+
+
+do
+  let d = scale "dorian"
+  let p = "[0 1 2 [3 4]]/16"
+  d1 $ stack[
+    fast 4 $ striate 32 $ s "drums" # shape 0.3 # gain 1.2 # begin (15/16) # end (16/16) # hpf 3000,
+    s "[[💙 💙?] [💙 💙? ~ 💙? ]]" # orbit 3 # gain  1.15,
+    s "[~ 🙏 ]" # orbit 3 # gain  1.15,
+    note (d $  "{0 [0 7] 0 [6 7]}%4"+p-7) # s "midi" # midichan "0" # gain 1.25,
+    note (d $ "[0,2,4,6](3,8,<0 2>)"+p+7) # s "midi" # midichan "[3]" ,
+    note (d $ irand 8+"7*8") # s "midi" # midichan "<~ 5 ~ ~>" # gain 1.2,
+    -- s "{🤖}%4",   --  Rocio
+    s "{👏*2}%2" # cut 3,   --  Eliana
+    control (range 60 110 $ slow 8 sine) # s "midi" # midichan "0" # ctlNum 71 # midicmd "control",
+    control (range 60 110 $ slow 8.6 sine) # s "midi" # midichan "0" # ctlNum 74 # midicmd "control",
+    degrade $ note (d $ round <$> (slow 4 $ sine*7+rand*7)+|("0*<8 4>")+"[0]"+p)  #s "sax:0" # cut 6 # shape 0.4 # gain 1.1 # begin (slow 3 $ sine*1) # delay 0.9 # delayt "<0.5>" # delayfb 0.95 # orbit 2 # coarse (slow 6 $ "0 4 1 32"),
+    s "~"]
