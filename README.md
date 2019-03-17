@@ -11,5 +11,5 @@ This  plugin allows you to enhance your livecoding performance by adding an audi
 Install this package to Atom using through the settings page or by running
 
 ```bash
-apm install atom-live-emojing
+apm install live-emojing
 ```
