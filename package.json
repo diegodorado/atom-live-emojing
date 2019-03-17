@@ -1,11 +1,10 @@
 {
   "name": "live-emojing",
   "main": "./lib/live-emojing",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A package  to enhance your livecoding performance by adding an audience-emojis-participation to it",
   "keywords": [],
   "activationCommands": {
-    "atom-workspace": "live-emojing:bind",
     "atom-workspace": "live-emojing:load"
   },
   "repository": "https://github.com/diegodorado/atom-live-emojing",
