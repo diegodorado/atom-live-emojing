@@ -1,19 +1,31 @@
 --lets start with something very simple
-d1 $ s "💜"
 
 
---add another emoji
-d1 $ s "💜🙏"
 
 
---play with the pattern
-d1 $ s "[💜🙏*2]*2"
+d1 $ s "😍"           
+--  waiting player--  waiting player
 
---some euclidean riythms
-d1 $ s "[💜🙏]([3 6]/2,8)"
 
--- apply a pattern transformation
-d1 $ off 0.25 (# speed 8) $ s "[💜🙏]([3 6]/2,8)"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 --safely moves structure

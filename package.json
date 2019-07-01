@@ -5,7 +5,10 @@
   "description": "A package  to enhance your livecoding performance by adding an audience-emojis-participation to it",
   "keywords": [],
   "activationCommands": {
-    "atom-workspace": "live-emojing:load"
+    "atom-workspace": [
+      "live-emojing:toggle",
+      "live-emojing:bind"
+    ]
   },
   "repository": "https://github.com/diegodorado/atom-live-emojing",
   "license": "MIT",
@@ -13,14 +16,21 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
-    "chokidar": "^2.0.4",
+    "async-request": "^1.2.0",
+    "chokidar": "^2.1.2",
+    "compare-versions": "^3.4.0",
     "es6-tween": "^5.3.1",
+    "express": "^4.16.4",
     "fs": "0.0.1-security",
     "http": "0.0.0",
+    "isomorphic-ws": "^4.0.1",
     "node-osc": "^2.1.0",
-    "request": "^2.87.0",
+    "request": "^2.88.0",
+    "rm-emoji-picker": "^0.4.0",
+    "simpleddp": "^2.0.2",
     "simplex-noise": "^2.4.0",
     "three-full": "^11.3.2",
-    "websocket": "^1.0.26"
+    "websocket": "^1.0.26",
+    "ws": "^6.2.0"
   }
 }
