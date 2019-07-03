@@ -1,7 +1,7 @@
 {
   "name": "live-emojing",
   "main": "./lib/live-emojing",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A package  to enhance your livecoding performance by adding an audience-emojis-participation to it",
   "keywords": [],
   "activationCommands": {
