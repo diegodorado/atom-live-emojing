@@ -2,11 +2,10 @@
 
 
 
-
-d1 $ s "😍"           
---  waiting player--  waiting player
-
-
+do
+  d1 $ s "💙👏"
+  d2 $ iter 4 $ s "👐🙌"
+  d3 $ s "<😻😽✊*4👍>"
 
 
 
