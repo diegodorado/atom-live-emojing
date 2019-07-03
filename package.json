@@ -19,7 +19,7 @@
     "async-request": "^1.2.0",
     "chokidar": "^2.1.2",
     "compare-versions": "^3.4.0",
-    "es6-tween": "^5.3.1",
+    "es6-tween": "^5.5.10",
     "express": "^4.16.4",
     "fs": "0.0.1-security",
     "http": "0.0.0",
