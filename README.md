@@ -102,6 +102,7 @@ A short mapping like that one will result in the following assignments
 
 The default mapping should work for starting. It uses SuperDirt default samples.
 
+The `emojis.json` is being watched for changes so you can edit it as you play, although you will has to re-evaluate the tidal code to hear the difference.
 
 ## Getting emojis on the background scene
 
