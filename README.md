@@ -78,8 +78,8 @@ Structure is fairly simple. It is a JSON Array of Array.
   ["👏","cp:3"],       // sample with index
   ["💙💚💜","bd"],     // many aliases
   ["🤫🤐","~"],        // silence is valid!
-  ["😺😼😹😻","cat:"], // colon syntax sugar
-  ["","feel:1"]        // catch remaining emojis
+  ["😺😼😹😻","cat:"], // trailing colon, syntactic sugar
+  ["","feel:1"]        // catch them all
 ]
 ```
 
@@ -100,7 +100,7 @@ A short mapping like that one will result in the following assignments
   "anything else" => "feel:1"
 ```
 
-The default mapping should work for starting. It uses SuperDirt default samples.
+The default mapping should work for starting. It uses *SuperDirt-Samples*.
 
 The `emojis.json` is being watched for changes so you can edit it as you play, although you will has to re-evaluate the tidal code to hear the difference.
 
@@ -135,7 +135,9 @@ n  = NetAddr("127.0.0.1",3333);
 
 ```
 
-You can put this in your `startup.scd` if you are using it often.
+You can copy and paste this code in your `startup.scd` if you are using it often.
+Or [download it](https://raw.githubusercontent.com/diegodorado/atom-live-emojing/master/sendEmojis.scd) to execute only when you want to.
+
 
 ### Spreading along the z-axis
 

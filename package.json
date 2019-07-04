@@ -16,7 +16,6 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
-    "bhttp": "^1.2.4",
     "chokidar": "^2.1.2",
     "compare-versions": "^3.4.0",
     "es6-tween": "^5.5.10",
@@ -24,6 +23,7 @@
     "fs": "0.0.1-security",
     "http": "0.0.0",
     "isomorphic-ws": "^4.0.1",
+    "needle": "^2.4.0",
     "node-osc": "^2.1.0",
     "rm-emoji-picker": "^0.4.0",
     "simpleddp": "^2.0.2",
