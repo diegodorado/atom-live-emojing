@@ -16,7 +16,7 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
-    "async-request": "^1.2.0",
+    "bhttp": "^1.2.4",
     "chokidar": "^2.1.2",
     "compare-versions": "^3.4.0",
     "es6-tween": "^5.5.10",
