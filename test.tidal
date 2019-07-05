@@ -1,7 +1,5 @@
 --lets start with something very simple
 
-
-
 d1 $ s "🐰 🐦 ~ 💫" # z_order 2
 
 do
@@ -17,19 +15,7 @@ d1 $ stack[
 
 
 
-
-
-d1 $ s "[🌯*2 🌯*2?] 🕊" #z_order 3   --  funky-duck
-
-
-
-
-d4 $ s "swbd"
-
-
-
-
-
+d5 $ s "[🌯*2 🌯*2?] 🕊" #z_order 3   --  funky-duck
 
 
 
@@ -117,7 +103,7 @@ do
       d = scale "lydian"
   d1 $ stack[
     n "0(5,8,<0 10 1>)" # s "{🦍🦄🎇👷🚵🤾🛅🎎}%1",   --  waiting player
-    s "{😵}%4",--  Diego
+    -- s "{😵}%4",--  Diego
     note (d $ "[0 2 4 6 8]"+p) # s " midi" # midichan 5,
     note (d $ "[-7 0 ~!2]"+p) # s " midi",
     note (d $ off 0.25 (+7) $ "[0,2,4]"+p) # s " midi" # midichan "[2,3]" # sus 0.1,
