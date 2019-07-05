@@ -30,7 +30,7 @@ You can toggle to a normal editor hitting `ctrl+alt+shift+e`, although you will 
 
 You can get messages from
 
-  1. [live emojing playground](https://diegodorado.github.io/labs/live-emojing) (the easiest way)
+  1. [live emojing playground](https://diegodorado.github.io/en/labs/live-emojing) (the easiest way)
   2. a telegram bot
   3. *(WIP) this chrome extension*
   4. *(WIP) roll your own*
